@@ -29,9 +29,21 @@ void main() {
     if(initialDeposit == 'y' || initialDeposit == 'Y'){
         System.out.println("Enter initial deposit value: ");
         double value = sc.nextDouble();
-        bank.setDepositValue(value);
+        bank.setTotalValue(value);
     }
 
+    System.out.println(bank);
+
+    System.out.println("Enter a deposit value: ");
+    double value = sc.nextDouble();
+    bank.enterDeposit(value);
+    System.out.println("Updated account data: ");
+    System.out.println(bank);
+
+    System.out.println("Enter a withdraw value: ");
+    value = sc.nextDouble();
+    bank.withdraw(value);
+    System.out.println("Updated account data: ");
     System.out.println(bank);
 
 

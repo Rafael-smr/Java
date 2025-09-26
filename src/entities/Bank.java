@@ -3,15 +3,15 @@ package entities;
 public class Bank {
     private int accountNumber;
     private String accountHolder;
-    private double depositValue = 0;
+    private double totalValue = 0;
 
     public Bank() {
     }
 
-    public Bank(int accountNumber, String accountHolder, double depositValue) {
+    public Bank(int accountNumber, String accountHolder, double totalValue) {
         this.accountNumber = accountNumber;
         this.accountHolder = accountHolder;
-        this.depositValue = depositValue;
+        this.totalValue = totalValue;
     }
 
     public int getAccountNumber() {
@@ -30,16 +30,24 @@ public class Bank {
         this.accountHolder = accountHolder;
     }
 
-    public double getDepositValue() {
-        return depositValue;
+    public double getTotalValue() {
+        return totalValue;
     }
 
-    public void setDepositValue(double depositValue) {
-        this.depositValue = depositValue;
+    public void setTotalValue(double totalValue) {
+        this.totalValue = totalValue;
+    }
+
+    public double enterDeposit(double value){
+        return this.totalValue += value;
+    }
+
+    public double withdraw(double value){
+        return this.totalValue -= value + 5.00;
     }
 
     public String toString(){
         return "Account " + getAccountNumber() + ", Holder: "
-                + getAccountHolder() + ", Balance: $ " + getDepositValue();
+                + getAccountHolder() + ", Balance: $ " + getTotalValue();
     }
 }
